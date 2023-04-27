@@ -35,6 +35,10 @@ get_gender <- function(name) {
   df_search_space <- df_names[df_names$length <= nchar(name), ]
   
   return_value <- NA
+
+  if (nrow(df_search_space) == 0) {
+    return(NA)
+  }
   
   for (i in 1:nrow(df_search_space)) {
     row <- df_search_space[i, ]
